@@ -1,12 +1,14 @@
 function findWaldo(arr, found) {
-  if (arr[i] === "Waldo") {
-      found(i);   // execute callback
-  }
+  arr.forEach( function(currentValue, index, array) {
+    if (currentValue === "Waldo") {
+      found(index);
+    }
+  })
 }
 
 function actionWhenFound(index) {
   console.log("Found Waldo at index " + index + "!");
 }
 
-arr.forEach(findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
 
